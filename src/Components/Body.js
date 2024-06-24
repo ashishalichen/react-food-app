@@ -30,6 +30,7 @@ export default function Body() {
                 <div className="search">
                     <input
                         className="border border-solid border-black rounded-l-sm"
+                        data-testid="searchInput"
                         value={searchText}
                         onChange={(e) => {
                             setSearchText(e.target.value)

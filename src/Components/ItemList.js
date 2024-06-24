@@ -15,7 +15,9 @@ export default function ItemList({ props }) {
         <div>
             {
                 props.map(item =>
-                    <div key={item.card.info.id} className="m-2 p-2 border-black border-b-2  flex justify-between">
+                    <div
+                        data-testid='foodItems'
+                        key={item.card.info.id} className="m-2 p-2 border-black border-b-2  flex justify-between">
 
                         <div className="text-left">
                             <span>{item?.card?.info?.name}</span>

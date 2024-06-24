@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Components/RestaurantCard.js</title>
+    <title>Code coverage report for Components/Cart.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">Components</a> RestaurantCard.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">Components</a> Cart.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -87,39 +87,19 @@
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,39 +107,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CDN_URL } from "../Utils/constant"
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useDispatch, useSelector } from "react-redux"
+import ItemList from "./ItemList"
+import { clearCart } from "../Utils/cartSlice"
 &nbsp;
-export default function RestaurantCard({ props }) {
-    const { name, cloudinaryImageId, avgRating, cuisines, sla } = props?.info
-    console.log(props)
+export default function Cart() {
 &nbsp;
-    return (
-        &lt;div data-testid="resCard" className="m-4 p-4 w-[250px] h-[450px] border border-slate-300 rounded-lg bg-slate-200 hover:bg-slate-300"&gt;
-            &lt;img
-                className="object-cover w-full rounded-lg"
-                alt='res-image'
-                src={CDN_URL + cloudinaryImageId}
-            /&gt;
-            &lt;h3 className="font-bold py-2"&gt;{name}&lt;/h3&gt;
-            &lt;h3&gt;{cuisines.slice(0, 3).join(', ')}&lt;/h3&gt;
-            &lt;h3&gt;{avgRating}&lt;/h3&gt;
-            &lt;h3&gt;Delivery Time&lt;/h3&gt;
-        &lt;/div&gt;
-    )
-}
+    const cartItems = useSelector((store) =&gt; store.cart.items)
 &nbsp;
-&nbsp;
-// Higher order component
-export function TopRated(RestaurantCard) {
-    return function (props) {
-        return (
-            &lt;&gt;
-                &lt;label className="absolute bg-black text-white m-2 p-1 rounded-sm"&gt;Top Rated&lt;/label&gt;
-                &lt;RestaurantCard {...props} /&gt;
-            &lt;/&gt;
-        )
+    const dispatch = useDispatch()
+    function handleClearCart() {
+        dispatch(clearCart())
     }
-}</pre></td></tr></table></pre>
+&nbsp;
+    return &lt;div className="text-center m-5 p-5"&gt;
+        &lt;h1 className="text-2xl font-bold"&gt;Cart&lt;/h1&gt;
+        &lt;div className="w-6/12 m-auto"&gt;
+            {
+                cartItems.length === 0 ? &lt;h1&gt;Empty cart is a grave sin&lt;/h1&gt; : &lt;button className="p-2 m-2 bg-black text text-white rounded-lg"
+                    onClick={handleClearCart}
+                &gt;Clear Cart&lt;/button&gt;
+            }
+            &lt;ItemList props={cartItems} /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+} </pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

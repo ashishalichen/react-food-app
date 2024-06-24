@@ -5,7 +5,7 @@ export default function RestaurantCard({ props }) {
     console.log(props)
 
     return (
-        <div className="m-4 p-4 w-[250px] h-[450px] border border-slate-300 rounded-lg bg-slate-200 hover:bg-slate-300">
+        <div data-testid="resCard" className="m-4 p-4 w-[250px] h-[450px] border border-slate-300 rounded-lg bg-slate-200 hover:bg-slate-300">
             <img
                 className="object-cover w-full rounded-lg"
                 alt='res-image'
